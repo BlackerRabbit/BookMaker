@@ -27,7 +27,6 @@
     return self;
 }
 
-
 -(void)buildUI{
     self.mainScrollview = [[UIScrollView alloc]initWithFrame:self.bounds];
     self.mainScrollview.delegate = self;
@@ -36,7 +35,6 @@
     
     self.centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 20, self.height)];
     self.centerLabel.center = CGPointMake(self.center.x, self.height / 2.f);
-    
     self.centerLabel.backgroundColor = WHITE;
     [self loadDatas:[YSBookKSize allBookAndTheKSize]];
 }

@@ -64,6 +64,11 @@
     [jiSuanBtn setTitleColor:COLORA(45, 45, 45) forState:UIControlStateNormal];
     [jiSuanBtn setFrame:CGRectMake(0, 0, 40, 30)];
     [jiSuanBtn addTarget:self action:@selector(jiSuanBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    jiSuanBtn.layer.borderWidth = 1.f;
+    jiSuanBtn.layer.cornerRadius = 2.f;
+    jiSuanBtn.layer.masksToBounds = YES;
+    jiSuanBtn.layer.borderColor = COLOR(46, 173, 250, 1).CGColor;
+
     
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     saveBtn.titleLabel.font = [UIFont systemFontOfSize:14];
