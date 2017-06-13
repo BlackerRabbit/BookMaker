@@ -267,6 +267,7 @@ NSInteger fengMianZhiBanValue = 1 * fmseshuNum * fmShiFouDoubleNum * 90;
 }
 
 -(void)saveBtnClicked:(id)sender{
+    [self jiSuanBtnClicked:nil];
     [self updatePaperWithBaseInfo];
 }
 
@@ -387,14 +388,11 @@ NSInteger fengMianZhiBanValue = 1 * fmseshuNum * fmShiFouDoubleNum * 90;
     self.currentBook.bookGongJia.shaiShangBan = array[3];
     
     NSArray *qiMaAry = [self.puGongJiaTable valuesForRowTitle:@"骑马订"];
-//    NSArray *tieSiAry = [self.puGongJiaTable valuesForRowTitle:@"铁丝平订"];
     NSArray *jiaoAry = [self.puGongJiaTable valuesForRowTitle:@"胶订"];
     NSArray *suoJiao = [self.puGongJiaTable valuesForRowTitle:@"锁胶"];
     self.currentBook.bookGongJia.sixteenQiMa = qiMaAry[0];
     self.currentBook.bookGongJia.eighteenQiMa = qiMaAry[1];
-    
-//    self.currentBook.bookGongJia.sixteenTieSiPing = tieSiAry[0];
-//    self.currentBook.bookGongJia.eighteenTieSiPing = tieSiAry[1];
+
     
     self.currentBook.bookGongJia.sixteenJiao = jiaoAry[0];
     self.currentBook.bookGongJia.eighteenJiao = jiaoAry[1];
@@ -416,7 +414,6 @@ NSInteger fengMianZhiBanValue = 1 * fmseshuNum * fmShiFouDoubleNum * 90;
     self.currentBook.fmCTPMoney = self.fmCTPValue;
     self.currentBook.fmYinShuaMoney = self.fmYinShuaValue;
     
-//    [self.currentBook.bookGongJia saveBookGongJia];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -487,8 +484,11 @@ NSInteger fengMianZhiBanValue = 1 * fmseshuNum * fmShiFouDoubleNum * 90;
 
     //封面有底价，如果不足底价，按底价计算
     //封面印刷费用 1印张 ＊ 千印数（（印量 * 2）／封面开数）＊ 色数 ＊ （1 或 2（是否双面印刷））＊ 单价（默认18）
-    
-    NSInteger qianYinshu = ((yinLiangNum * 2) / fmKaiShu) / 1000 >= 1 ? (yinLiangNum / (zwKaiShu / 2)) / 1000 : 1;
+    NSInteger qianYinshu = 0;
+    if (fmKaiShu > 0) {
+        qianYinshu = ((yinLiangNum * 2) / fmKaiShu) / 1000 >= 1 ? (yinLiangNum / (zwKaiShu / 2)) / 1000 : 1;
+    }
+   
     //这是封面的印刷费用。
     NSInteger fengmianValue = 1 * qianYinshu * fmseshuNum * fmShiFouDoubleNum * neyeDanJia;
 //    [VMTools alertMessage:[NSString stringWithFormat:@"feng mian value is %ld",fengmianValue]];

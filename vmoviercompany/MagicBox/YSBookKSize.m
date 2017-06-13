@@ -358,7 +358,31 @@
 
 
 +(NSDictionary *)allkSizeDictionary{
-    
+    return @{
+             @"8":@[
+                     @{@"ksize":[YSBookKSize KSizeEightHeng],
+                       @"pageSize":[self bookRealSizeWithKSize:8 andIndex:1]},
+                    ],
+             
+            @"12":@[
+                     @{@"ksize":[YSBookKSize KSizeTwelveThird],
+                       @"pageSize":[self bookRealSizeWithKSize:12 andIndex:3]
+                       }],
+            @"16":@[ @{@"ksize":[YSBookKSize KSizeSixteenFirst],
+                        @"pageSize":[self bookRealSizeWithKSize:16 andIndex:1]}],
+             
+            @"24":@[
+                     @{@"ksize":[YSBookKSize KSizeTwentyFourThird],
+                       @"pageSize":[self bookRealSizeWithKSize:24 andIndex:2]}],
+             
+             @"32":@[@{@"ksize":[YSBookKSize KSizeThirtyTwoFirst],
+                       @"pageSize":[self bookRealSizeWithKSize:32 andIndex:1]
+                       }],
+             @"64":@[@{@"ksize":[YSBookKSize KSizeSixtyFour],
+                       @"pageSize":[self bookRealSizeWithKSize:64 andIndex:0]
+                       }],
+            };
+    /*
     return @{
              @"1":@[@{@"ksize":[YSBookKSize KSizeOne],
                       @"pageSize":[self bookRealSizeWithKSize:1 andIndex:0]
@@ -540,6 +564,7 @@
                         @"pageSize":[self bookRealSizeWithKSize:128 andIndex:0]
                         }],
              };
+     */
 }
 
 
@@ -591,6 +616,15 @@
 
 +(NSArray *)allBookAndTheKSize{
     return @[
+             @"8",
+             @"12",
+             @"16",
+             @"24",
+             @"32",
+             @"64",
+            ];
+    /*
+    return @[
              @"1",
              @"2",
              @"3",
@@ -625,6 +659,7 @@
              @"100",
              @"128"
              ];
+     */
 }
 
 +(NSArray *)loadDataFromBundlePackage{
@@ -706,7 +741,19 @@
             }
         }
     }
-    return [dataAry copy];
+    NSMutableArray *finaAry = [@[]mutableCopy];
+    for (NSDictionary *dic in dataAry) {
+        NSArray *ary = dic.allValues.lastObject;
+        NSString *str = ary.lastObject;
+        NSArray *strAry = [str componentsSeparatedByString:@","];
+        if (strAry.count == 3) {
+            [finaAry addObject:dic];
+        }
+    }
+    return [finaAry copy];
+    
+    
+//    return [dataAry copy];
 }
 
 +(NSArray *)allPaperSizeFromLocal{

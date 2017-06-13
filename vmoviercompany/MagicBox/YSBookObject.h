@@ -13,20 +13,20 @@
 
 @interface YSBookObject : NSObject
 
-
 @property (nonatomic, strong, readwrite) YSGongJiaObject *bookGongJia;
 @property (nonatomic, strong, readwrite) NSString *gongJiaId;
 
 //id信息，完全是打酱油的信息
 @property (nonatomic, strong, readwrite) NSString *mainID;
-
 @property (nonatomic, strong, readwrite) NSString *finalyMoney; //总成本
 
 //base信息
 @property (nonatomic, strong, readwrite) NSString *bookName;        //书名
+
 @property (nonatomic, strong, readwrite) NSString *kSize;           //开本
 @property (nonatomic, strong, readwrite) NSString *quanKaiSize;     //用纸尺寸
 @property (nonatomic, strong, readwrite) NSString *bookSize;        //书的尺寸
+
 @property (nonatomic, strong, readwrite) NSString *workPraise;      //书的定价
 
 @property (nonatomic, strong, readwrite) NSString *yinzhangNum;     //印张

@@ -104,8 +104,8 @@
     self.saveBtn.left = 60;
     self.shareBtn.right = self.view.width - 60 ;
     self.shareBtn.bottom = self.saveBtn.bottom;
-    [self.view addSubview:self.saveBtn];
-    [self.view addSubview:self.shareBtn];
+//    [self.view addSubview:self.saveBtn];
+//    [self.view addSubview:self.shareBtn];
     
     
     // Do any additional setup after loading the view.

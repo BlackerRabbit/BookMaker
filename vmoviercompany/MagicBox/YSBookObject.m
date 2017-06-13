@@ -40,6 +40,7 @@
         self.bookSize = @"147x210";
         self.kSize = @"32";
         self.dingJiaNum = @"45";
+        self.workPraise = self.dingJiaNum;
         self.yinzhangNum = @"8";
         self.yinLiangNum = @"8000";
         self.zhuangDingWay = @"锁线胶订";
@@ -127,10 +128,12 @@
     self.quanKaiSize = dic[@"book_quanKaisize"];
     self.bookSize = dic[@"book_size"];
     self.workPraise = dic[@"book_price"];
+    
     self.yinzhangNum = dic[@"yinzhangNum"];
     self.yinLiangNum = dic[@"yinLiangNum"];
     self.zhuangDingWay = dic[@"zhuangDingWay"];
     self.dingJiaNum = dic[@"dingJiaNum"];
+    
     self.zwyongZhiNum = dic[@"zwyongZhiNum"];
     self.zwkezhongNum = dic[@"zwkezhongNum"];
     self.zwMoney = dic[@"zwMoney"];

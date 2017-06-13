@@ -200,6 +200,7 @@
 }
 
 -(void)saveBtnClicked:(id)sender{
+    [self jiSuanBtnClicked:nil];
     [self updatePaperWithBaseInfo];
     [self.navigationController popViewControllerAnimated:YES];
 }

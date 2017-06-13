@@ -155,7 +155,7 @@
     YSBookObject *bookObj = appdele.rootVC.currentBook;
     NSString *xiaoshouZheKou = bookObj.xiaoshouZheKou;
     NSString *tuiHuoLV = bookObj.tuiHuoLV;
-    [self.jsqVC getValueFromFaHuoTuiHuo:[NSString stringWithFormat:@"%@",self.faXingFeiValue]];
+    [self.jsqVC getValueFromFaHuoTuiHuo:[NSString stringWithFormat:@"%@",self.shiYangFaXingFeiValue]];
 }
 
 -(void)clickKSize:(YSCustomInputView *)customeview{
@@ -198,7 +198,7 @@
     bookObj.xiaoshouZheKou = [xszk.inputText removeSubstring:@"%"];
     bookObj.faxingFei = [fxf.inputText removeSubstring:@"%"];
     bookObj.tuiHuoLV = [thl.inputText removeSubstring:@"%"];
-    
+    bookObj.xiaoShouShiYangMoney = [self.xiaoShouShiYangValue isValid] ? self.xiaoShouShiYangValue : @"0.00";
     
 }
 
@@ -221,6 +221,9 @@
     
     NSInteger yinliangNum = [self.currentBook.yinLiangNum integerValue];
     CGFloat danjiaNum = [self.currentBook.workPraise floatValue];
+    if (danjiaNum <= 0) {
+        danjiaNum = [self.currentBook.dingJiaNum floatValue];
+    }
     //销售实洋
     CGFloat xssy = (yinliangNum - (yinliangNum * thlValue)) * danjiaNum * xszkValue;
     //实洋发行费
@@ -236,10 +239,11 @@
 -(void)jiSuanBtnClicked:(id)sender{
 
     [self getFinalValue];
-    [self.huiZongView loadValues:@[]];
+    [self.huiZongView loadValues:@[self.xiaoShouShiYangValue,self.shiYangFaXingFeiValue]];
 }
 
 -(void)saveBtnClicked:(id)sender{
+    [self jiSuanBtnClicked:nil];
     [self updatePaperWithBaseInfo];
     [self.navigationController popViewControllerAnimated:YES];
 }

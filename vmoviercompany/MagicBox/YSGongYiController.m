@@ -288,6 +288,7 @@
 -(void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:animated];
+    [self updatePaperWithBaseInfo];
     [self.jsqVC getValueFromGongYi:[NSString stringWithFormat:@"%@",self.gongYiValue]];
 }
 
@@ -411,6 +412,7 @@
 }
 
 -(void)saveBtnClicked:(id)sender{
+    [self jiSuanBtnClicked:nil];
     [self updatePaperWithBaseInfo];
     
     //保存所有的属性

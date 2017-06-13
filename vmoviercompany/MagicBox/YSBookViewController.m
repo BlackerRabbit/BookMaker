@@ -24,7 +24,7 @@
 #import "VMRequestHelper.h"
 #import "VMCyclesScrollview.h"
 #import "YSWebViewController.h"
-
+#import "YSJSQController.h"
 
 
 @interface YSBookViewController ()
@@ -97,8 +97,8 @@
     [self.historyBtn setTitleColor:COLORA(50, 50, 50) forState:UIControlStateNormal];
     [self.historyBtn setBackgroundColor:CLEAR];
     
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:self.historyBtn];
-    self.navigationItem.leftBarButtonItem = leftItem;
+//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:self.historyBtn];
+//    self.navigationItem.leftBarButtonItem = leftItem;
     
     
     
@@ -237,6 +237,13 @@
 }
 
 -(void)creBtnClicked:(id)sender{
+    
+    //直接进入计算器页面
+    YSJSQController *jsqVC = [[YSJSQController alloc]init];
+    [self.navigationController pushViewController:jsqVC animated:YES];
+    
+    
+    /*
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
     YSCoverInputView *coverInput = [[YSCoverInputView alloc]initWithFrame:window.bounds];
@@ -260,6 +267,7 @@
             [weakSelf.navigationController pushViewController:index animated:YES];
         }
     };
+     */
 }
 
 -(void)paperBtnClicked:(id)sender{

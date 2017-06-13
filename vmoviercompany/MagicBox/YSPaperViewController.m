@@ -86,7 +86,7 @@
   
     self.view.backgroundColor = WHITE;
     
-    NSArray *bookSize = [[YSBookKSize avildKsizeWithRealSize:1] firstObject][@"pageSize"];
+    NSArray *bookSize = [[YSBookKSize avildKsizeWithRealSize:8] firstObject][@"pageSize"];
     [self updateLabelsWithData:bookSize];
     
 
@@ -96,7 +96,7 @@
     self.selectedView = selView;
     
     //创建view
-    NSArray *array = [YSBookKSize avildKsizeWithRealSize:1];
+    NSArray *array = [YSBookKSize avildKsizeWithRealSize:8];
     NSMutableArray *workAry = [@[]mutableCopy];
     for (NSDictionary *dic in array) {
         [workAry addObject:[dic objectForKey:@"ksize"]];

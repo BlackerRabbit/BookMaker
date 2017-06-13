@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095782981E77CF9A009AF94B /* YSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095782971E77CF9A009AF94B /* YSBaseViewController.m */; };
 		0B275DF81C3A6FA600D2CAA4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B275DF71C3A6FA600D2CAA4 /* MessageUI.framework */; };
 		0B53AD6A1C185DCC002452F9 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53AD691C185DCC002452F9 /* libresolv.tbd */; };
 		0B53AD6C1C185DD7002452F9 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B53AD6B1C185DD7002452F9 /* libxml2.tbd */; };
@@ -196,6 +197,9 @@
 
 /* Begin PBXFileReference section */
 		0861543580B7FA78CA16A704 /* Pods-MagicBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicBox.release.xcconfig"; path = "../Pods/Target Support Files/Pods-MagicBox/Pods-MagicBox.release.xcconfig"; sourceTree = "<group>"; };
+		095782961E77CF9A009AF94B /* YSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSBaseViewController.h; sourceTree = "<group>"; };
+		095782971E77CF9A009AF94B /* YSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSBaseViewController.m; sourceTree = "<group>"; };
+		095782991E77E5B6009AF94B /* YSMainProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMainProtocol.h; sourceTree = "<group>"; };
 		0B275DF71C3A6FA600D2CAA4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0B53AD691C185DCC002452F9 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		0B53AD6B1C185DD7002452F9 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
@@ -762,6 +766,8 @@
 				523AC7EA1D65CA660081FCB3 /* YSBookObject.m */,
 				52DB754E1D7C270A00AF32E1 /* YSGongJiaObject.h */,
 				52DB754F1D7C270A00AF32E1 /* YSGongJiaObject.m */,
+				095782961E77CF9A009AF94B /* YSBaseViewController.h */,
+				095782971E77CF9A009AF94B /* YSBaseViewController.m */,
 			);
 			name = YS;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 		52FBCCE51BE75F3E0061D119 = {
 			isa = PBXGroup;
 			children = (
+				095782991E77E5B6009AF94B /* YSMainProtocol.h */,
 				52BF00981D22E06C001A85AF /* YSViews */,
 				52BF00941D22DFC0001A85AF /* YSController */,
 				52DC91871D1A644E00008BA1 /* YS */,
@@ -1414,6 +1421,7 @@
 				520773501D5F4EDE0042E750 /* TPKeyboardAvoidingTableView.m in Sources */,
 				523AC7EE1D684F060081FCB3 /* YSBaseInfoController.m in Sources */,
 				AFFF6DFB1CD0B91B002198D7 /* MBRefreshHeader.m in Sources */,
+				095782981E77CF9A009AF94B /* YSBaseViewController.m in Sources */,
 				AFFF6DF41CD0B91B002198D7 /* UIView+VMToast.m in Sources */,
 				5244E28E1D9B00FD00271FA3 /* YSHuiZongView.m in Sources */,
 				AF9B2B7E1CBE44860080FFAD /* UITableView+FDIndexPathHeightCache.m in Sources */,
